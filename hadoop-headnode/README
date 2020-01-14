@@ -1,0 +1,23 @@
+Hadoop headnode includes HDFS namenode & YARN recourcemanager
+
+1. To start Hadoop headnode, you need to create docker network
+   (You could change network's name "hadoop-network" on your own)
+
+docker network create hadoop-network
+
+2. Get image of Hadoop headnode
+
+docker pull genok/hadoop-headnode
+
+3. Use following command to create container with Hadoop headnode
+   You could use your own container's name (--name=your_own_container_name)
+   Replace network's name, if you've changed it at last step (--network)
+
+docker run -p 8020:8020 -p 8088:8088 -p 9870:9870 --network=hadoop-network --name=headnode -d genok/hadoop-headnode
+
+4. Check, that headnode works, in your browser:
+
+http://localhost:8088
+http://localhost:9870
+
+

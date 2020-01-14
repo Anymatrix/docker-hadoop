@@ -1,0 +1,4 @@
+This container includes base settings for Hadoop cluster, which are the same for headnode and workers.
+To see working example of Hadoop cluster, download genok/hadoop-headnode and genok/hadoop-worker.
+They both are based on this image. 
+

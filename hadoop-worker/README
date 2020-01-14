@@ -1,0 +1,22 @@
+Hadoop worker includes HDFS datanode, YARN nodemanager
+
+0. You need to have docker network and Hadoop headnode to start Hadoop cluser
+   (Manual at genok/hadoop-headnode page)
+
+1. Get image of Hadoop worker
+
+docker pull genok/hadoop-worker
+
+2. Use following command to create container with Hadoop worker
+   You could use your own container's name (--name=your_own_container_name)
+   Change network's name, if you've your own (--network)
+
+docker run --network=hadoop-network --name=worker -d genok/hadoop-worker
+
+3. Check, that headnode works, in your browser:
+
+http://localhost:8088
+http://localhost:9870
+
+You could use more, than 1 worker in your Hadoop cluster
+To do it, create new containers with another names, as at step 2
