@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  headnode:
+    image: "genok/hadoop-headnode"
+    ports:
+      - "8020:8020"
+      - "8088:8088"
+      - "9870:9870"
+
+  worker:
+    image: "genok/hadoop-worker"
+
+
+
+
