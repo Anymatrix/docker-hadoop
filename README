@@ -1,0 +1,41 @@
+This repository contains example of creating Hadoop cluster with Docker
+
+STRUCTURE:
+
+FOLDERS:
+/hadoop-base     - Dockerfile with base settings for Hadoop headnode and worker
+/hadoop-headnode - Dockerfile for Hadoop headnode, based on hadoop-base image.
+                   Contains HDFS namenode & YARN recourcemanage
+/hadoop-worker   - Dockerfile for Hadoop worker, based on hadoop-base image.
+                   Contains HDFS datanode, YARN nodemanager
+
+#################################################################################
+
+FILES:
+docker-compose.yml 
+
+Starts Hadoop cluster from Docker-compose. 
+Use following command, to do it:
+docker-compose up -d
+
+Cluster stops with:
+docker-compose down
+_________________________________________________________________________________
+hadoop-start.sh
+
+Configurate and start Hadoop cluster form bash.
+It downloads images and creates containers of Hadoop cluster.
+If you have GUI, it opens web-interfaces of Hadoop cluster.
+
+Starts with:
+bash hadoop-start.sh
+_________________________________________________________________________________
+hadoop-autoremove.sh
+
+Autoremove of Hadoop cluster. 
+It stops containers and then removes network, containers, images. 
+Also works with Docker-Compose.
+
+bash hadoop-autoremove.sh
+_________________________________________________________________________________
+
